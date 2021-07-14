@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  rabbit1:
+    image: bijukunjummen/rabbitmq-server
+    hostname: masstransit-quartz-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      
+  DbSqlServer:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    hostname: masstransit-quartz-sqlserver
+    container_name: DbSqlServer
+    environment: 
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "DBKey123"
+    ports:
+      - "1433:1433"
+      
+  
