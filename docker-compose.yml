@@ -3,7 +3,7 @@ version: '3.4'
 services:
   rabbit1:
     image: bijukunjummen/rabbitmq-server
-    hostname: masstransit-quartz-rabbitmq
+    hostname: masstransit-quartz-rabbit-mq
     ports:
       - "5672:5672"
       - "15672:15672"
